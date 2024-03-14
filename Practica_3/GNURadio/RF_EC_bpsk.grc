@@ -163,7 +163,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '1'
+    const: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
