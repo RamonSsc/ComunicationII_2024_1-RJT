@@ -346,7 +346,7 @@ class prac3a(gr.top_block, Qt.QWidget):
         self.blocks_stream_to_vector_0 = blocks.stream_to_vector(gr.sizeof_float*1, N)
         self.blocks_null_sink_0 = blocks.null_sink(gr.sizeof_float*1)
         self.blocks_multiply_const_vxx_1 = blocks.multiply_const_vff([1/(N*samp_rate)]*N)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff(1)
+        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_ff(2)
         self.blocks_complex_to_mag_squared_0 = blocks.complex_to_mag_squared(N)
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.blocks_add_xx_0 = blocks.add_vff(1)
