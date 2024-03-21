@@ -493,19 +493,19 @@ class ook(gr.top_block, Qt.QWidget):
         self.blocks_char_to_float_0 = blocks.char_to_float(1, 1)
         self.blocks_add_const_vxx_0 = blocks.add_const_ff(-0.5)
         self.analog_random_source_x_0 = blocks.vector_source_b(list(map(int, numpy.random.randint(0, 2, 1000000))), True)
-        self.analog_const_source_x_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 0.7)
+        self.analog_const_source_x_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 1)
 
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0, 1))
-        self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0_0, 1))
+        self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0, 0))
+        self.connect((self.analog_const_source_x_0, 0), (self.epy_block_0_0, 0))
         self.connect((self.analog_random_source_x_0, 0), (self.blocks_char_to_float_0, 0))
         self.connect((self.blocks_add_const_vxx_0, 0), (self.blocks_multiply_const_vxx_0_0, 0))
         self.connect((self.blocks_char_to_float_0, 0), (self.blocks_add_const_vxx_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.epy_block_0, 0))
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.epy_block_0_0, 0))
+        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.epy_block_0, 1))
+        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.epy_block_0_0, 1))
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.interp_fir_filter_xxx_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.qtgui_time_sink_x_0_0, 0))
         self.connect((self.epy_block_0, 0), (self.qtgui_freq_sink_x_0, 0))

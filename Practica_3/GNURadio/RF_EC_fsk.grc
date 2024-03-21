@@ -163,7 +163,7 @@ blocks:
     affinity: ''
     alias: ''
     comment: ''
-    const: '0.7'
+    const: '1'
     maxoutbuf: '0'
     minoutbuf: '0'
     type: float
@@ -171,7 +171,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1016, 388.0]
+    coordinate: [936, 396.0]
     rotation: 180
     state: true
 - name: analog_random_source_x_0
@@ -244,7 +244,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [920, 92.0]
+    coordinate: [920, 132.0]
     rotation: 0
     state: enabled
 - name: blocks_multiply_const_vxx_0_0
@@ -295,8 +295,8 @@ blocks:
       \   self.n_m=0\n\n    def work(self, input_items, output_items):\n        A=input_items[0]\n\
       \        Q=input_items[1]\n        y=output_items[0]\n        N=len(A)\n   \
       \     n=np.linspace(self.n_m,self.n_m+N-1,N)\n        self.n_m += N\n      \
-      \  y[:]=A*np.cos(2*math.pi*self.fc*n/self.samp_rate+Q)\n        return len(output_items[0])\n\
-      \n\n"
+      \  y[:]=A*np.cos(2*math.pi*self.fc*n/self.samp_rate+Q)\n        \n        return\
+      \ len(output_items[0])\n\n\n"
     affinity: ''
     alias: ''
     comment: ''
@@ -311,7 +311,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1208, 104.0]
+    coordinate: [1144, 136.0]
     rotation: 0
     state: true
 - name: epy_block_0_0
@@ -368,7 +368,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [792, 72.0]
+    coordinate: [824, 80.0]
     rotation: 0
     state: enabled
 - name: import_0
@@ -1164,13 +1164,13 @@ blocks:
     state: true
 
 connections:
-- [analog_const_source_x_0, '0', epy_block_0, '1']
-- [analog_const_source_x_0, '0', epy_block_0_0, '1']
+- [analog_const_source_x_0, '0', epy_block_0, '0']
+- [analog_const_source_x_0, '0', epy_block_0_0, '0']
 - [analog_random_source_x_0, '0', blocks_char_to_float_0, '0']
 - [blocks_add_const_vxx_0, '0', blocks_multiply_const_vxx_0_0, '0']
 - [blocks_char_to_float_0, '0', blocks_add_const_vxx_0, '0']
-- [blocks_multiply_const_vxx_0, '0', epy_block_0, '0']
-- [blocks_multiply_const_vxx_0, '0', epy_block_0_0, '0']
+- [blocks_multiply_const_vxx_0, '0', epy_block_0, '1']
+- [blocks_multiply_const_vxx_0, '0', epy_block_0_0, '1']
 - [blocks_multiply_const_vxx_0_0, '0', interp_fir_filter_xxx_0, '0']
 - [blocks_multiply_const_vxx_0_0, '0', virtual_sink_0_0, '0']
 - [epy_block_0, '0', virtual_sink_0_0_0_0, '0']
